@@ -1,17 +1,16 @@
+<script setup>
+import {RouterView} from 'vue-router'
+
+</script>
 <template>
   <div>
-    <h1>Hello Electron with Vue 3 and Vite!</h1>
+    <RouterView v-slot="{ Component, route }">
+      <transition :name="route.meta.transition">
+        <component :is="Component"/>
+      </transition>
+    </RouterView>
   </div>
 </template>
 
-<script>
-export default {
-  name: 'App',
-}
-</script>
-
 <style>
-h1 {
-  color: #42b983;
-}
 </style>
